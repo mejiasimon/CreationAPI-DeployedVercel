@@ -1,0 +1,26 @@
+{
+  "name": "airbnb",
+  "version": "1.0.0",
+  "description": "reservation app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mejiasimon/airbnb.git"
+  },
+  "keywords": [
+    "hotels",
+    "reservatio"
+  ],
+  "author": "Simon Mejia Muñoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mejiasimon/airbnb/issues"
+  },
+  "homepage": "https://github.com/mejiasimon/airbnb#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
