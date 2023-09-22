@@ -2,6 +2,7 @@
   "name": "airbnb",
   "version": "1.0.0",
   "description": "reservation app",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +13,7 @@
   },
   "keywords": [
     "hotels",
-    "reservatio"
+    "reservation"
   ],
   "author": "Simon Mejia Muñoz",
   "license": "ISC",
