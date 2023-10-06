@@ -1,36 +1,16 @@
 import express from 'express'
-
+import { controllerHabitacion } from '../controllers/ControladorHabitacion.js'
 export const Routes=express.Router()
-Routes.get("/obtener/habitaciones", (req, res) => {
-  res.send("obtienes varias habitaciones");
-});
-Routes.put("/actualizar/habitacion", (req, res) => {
-  res.send("actualizas la habitacion");
-});
-Routes.delete("/eliminar/habitacion", (req, res) => {
-  res.send("eliminas habitacion");
-});
-Routes.post("/mandar/habitacion", (req, res) => {
-  res.send("mandas habitacion");
-});
-Routes.get("/obtener/habitacion", (req, res) => {
-  res.send("obtienes una habitacion");
-});
+Routes.get("/obtener/habitaciones")
+Routes.put("/actualizar/habitacion/:id")
+Routes.delete("/eliminar/habitacion/:id")
+Routes.post("/mandar/habitacion")
+Routes.get("/obtener/habitacion/:id")
 //reservas
-Routes.get("/obtener/reservas", (req, res) => {
-  res.send("obtienes varias habitaciones");
-});
-Routes.put("/actualizar/reserva", (req, res) => {
-  res.send("actualizas la habitacion");
-});
-Routes.delete("/eliminar/reserva", (req, res) => {
-  res.send("eliminas habitacion");
-});
-Routes.post("/hacer/reserva", (req, res) => {
-  res.send("mandas habitacion");
-});
-Routes.get("/obtener/reserva", (req, res) => {
-  res.send("obtienes una reserva");
-});
+Routes.get("/obtener/reservas")
+Routes.put("/actualizar/reserva/:id")
+Routes.delete("/eliminar/reserva/:id")
+Routes.post("/hacer/reserva")
+Routes.get("/obtener/reserva/:id")
 
 

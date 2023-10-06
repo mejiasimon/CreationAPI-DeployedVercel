@@ -14,5 +14,6 @@ WakeServer() {
 }
 processPetition(){
     this.app.use("/",Routes)
+    this.app.use(express.json())
 }
 }

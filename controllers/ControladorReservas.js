@@ -1,8 +1,34 @@
 export class controllerReservas {
   constructor() {}
-  buscar(request, response) {}
-  buscarEspecifico(request, response) {}
-  modificar(request, response) {}
-  registrar(request, response) {}
-  eliminar(request, response) {}
+  buscar(request, response) {
+    try{
+
+    }catch(error){
+      console.error(error)
+    }
+  }
+  buscarEspecifico(request, response) {
+      try {
+      } catch (error) {
+        console.error(error);
+      }
+  }
+  modificar(request, response) {
+      try {
+      } catch (error) {
+        console.error(error);
+      }
+  }
+  registrar(request, response) {
+      try {
+      } catch (error) {
+        console.error(error);
+      }
+  }
+  eliminar(request, response) {
+      try {
+      } catch (error) {
+        console.error(error);
+      }
+  }
 }
