@@ -1,3 +1,5 @@
-import { Api } from "./api.js";
+import { Api } from "./Api.js";
+import "dotenv/config";
 const api=new Api;
+
 api.WakeServer()

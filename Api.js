@@ -1,9 +1,12 @@
 import express from "express";
 import { Routes } from "./routes/rutasHoteles.js";
+import { establecerConexionDB } from "./database/conexion.js";
+
 
 export class Api {
   constructor() {
     this.app = express();
+    this.ConectarDB()
     this.processPetition()
     this.port = 3000;
   }
@@ -16,4 +19,8 @@ processPetition(){
     this.app.use("/",Routes)
     this.app.use(express.json())
 }
+ConectarDB(){
+  establecerConexionDB()
+}
+
 }

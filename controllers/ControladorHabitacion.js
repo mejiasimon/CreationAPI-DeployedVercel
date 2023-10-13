@@ -1,46 +1,47 @@
-import { response } from "express";
 
 export class controllerHabitacion {
   constructor() {}
-  buscar(request, response) {
+
+  modificar (request, response) {
+    let id = request.params.id;
     try {
-      response.status(200).json({"estado":true,"mensaje":"peticion exitosa habitaciones buscadas","datos":null});
-    } catch (error) {
-      console.error(error);
-            response
-              .status(400)
-              .json({
-                estado: false,
-                mensaje: "peticion fallada",
-                datos:null
-              });
-    }
-  }
-  buscarEspecifico(request, response) {
-    let id=request.params.id
-    try {
-      response
-        .status(200)
-        .json({
-          estado: true,
-          mensaje: "peticion exitosa habitacion buscada",
-          datos: null,
-        });
+      response.status(200).json({
+        estado: true,
+        mensaje: "peticion exitosa habitacionactualizada",
+        datos: null,
+      });
     } catch (error) {
       console.error(error);
       response.status(400).json({
         estado: false,
         mensaje: "peticion fallada",
-        datos: null,});
+        datos: null,
+      });
     }
   }
-  modificar(request, response) {
-    let datos=request.body
-    let id=request.paramas.id
+
+  buscar(request, response) {
     try {
       response.status(200).json({
         estado: true,
-        mensaje: "peticion exitosa habitacion actualizada",
+        mensaje: "peticion exitosa habitaciones buscadas",
+        datos: null,
+      });
+    } catch (error) {
+      console.error(error);
+      response.status(400).json({
+        estado: false,
+        mensaje: "peticion fallada",
+        datos: null,
+      });
+    }
+  }
+  buscarEspecifico(request, response) {
+    let id = request.params.id;
+    try {
+      response.status(200).json({
+        estado: true,
+        mensaje: "peticion exitosa habitacion buscada",
         datos: null,
       });
     } catch (error) {
@@ -53,24 +54,24 @@ export class controllerHabitacion {
     }
   }
   registrar(request, response) {
-    let datos=request.body
-     try {
-       response.status(200).json({
-         estado: true,
-         mensaje: "peticion exitosa habitacion creada",
-         datos: null,
-       });
-     } catch (error) {
-       console.error(error);
-       response.status(400).json({
-         estado: false,
-         mensaje: "peticion fallada",
-         datos: null,
-       });
-     }
+    let datos = request.body;
+    try {
+      response.status(200).json({
+        estado: true,
+        mensaje: "peticion exitosa habitacion creada",
+        datos: null,
+      });
+    } catch (error) {
+      console.error(error);
+      response.status(400).json({
+        estado: false,
+        mensaje: "peticion fallada",
+        datos: null,
+      });
+    }
   }
   eliminar(request, response) {
-    let id=request.params.id
+    let id = request.params.id;
     try {
       response.status(200).json({
         estado: true,
