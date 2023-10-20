@@ -15,7 +15,7 @@ export class controllerHabitacion {
       console.error(error);
       response.status(400).json({
         estado: false,
-        mensaje: "peticion fallada",
+        mensaje: "peticion fallada"+error,
         datos: null,
       });
     }
@@ -57,20 +57,21 @@ export class controllerHabitacion {
     }
   }
   async registrar(request, response) {
-    let datos = request.body;
+
     try {
       let data = new ServicioHabitacion();
-      await data.registrar(data)
+      let datos = request.body;
+      await data.registrar(datos)
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacion creada",
-        datos: null,
+        datos:datos,
       });
     } catch (error) {
       console.error(error);
       response.status(400).json({
         estado: false,
-        mensaje: "peticion fallada",
+        mensaje: "peticion fallada"+error,
         datos: null,
       });
     }
