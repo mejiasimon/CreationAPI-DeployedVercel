@@ -1,4 +1,4 @@
-import { ServicioHabitacion } from "../services/ServicioHabitacion";
+import { ServicioHabitacion } from "../services/ServicioHabitacion.js";
 export class controllerHabitacion {
   constructor() {}
   async modificar (request, response) {

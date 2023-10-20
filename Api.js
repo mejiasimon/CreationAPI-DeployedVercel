@@ -16,8 +16,8 @@ WakeServer() {
     });
 }
 processPetition(){
+    this.app.use(express.json());
     this.app.use("/",Routes)
-    this.app.use(express.json())
 }
 ConectarDB(){
   establecerConexionDB()
