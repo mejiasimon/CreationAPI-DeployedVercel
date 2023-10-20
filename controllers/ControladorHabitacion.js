@@ -1,14 +1,15 @@
-
+import { ServicioHabitacion } from "../services/ServicioHabitacion";
 export class controllerHabitacion {
   constructor() {}
-
-  modificar (request, response) {
+  async modificar (request, response) {
     let id = request.params.id;
     try {
+          let data = new ServicioHabitacion;
+          let datos=await data.modificar(id,data)
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacionactualizada",
-        datos: null,
+        datos:datos,
       });
     } catch (error) {
       console.error(error);
@@ -20,12 +21,13 @@ export class controllerHabitacion {
     }
   }
 
-  buscar(request, response) {
+  async buscar(request, response) {
     try {
+      let data = new ServicioHabitacion();
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitaciones buscadas",
-        datos: null,
+        datos: await data.buscar(),
       });
     } catch (error) {
       console.error(error);
@@ -36,13 +38,14 @@ export class controllerHabitacion {
       });
     }
   }
-  buscarEspecifico(request, response) {
+  async buscarEspecifico(request, response) {
     let id = request.params.id;
     try {
+      let data = new ServicioHabitacion();
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacion buscada",
-        datos: null,
+        datos: await data.buscarEspecifico(id),
       });
     } catch (error) {
       console.error(error);
@@ -53,9 +56,11 @@ export class controllerHabitacion {
       });
     }
   }
-  registrar(request, response) {
+  async registrar(request, response) {
     let datos = request.body;
     try {
+      let data = new ServicioHabitacion();
+      await data.registrar(data)
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacion creada",
@@ -70,13 +75,14 @@ export class controllerHabitacion {
       });
     }
   }
-  eliminar(request, response) {
+  async eliminar(request, response) {
     let id = request.params.id;
     try {
+      let data = new ServicioHabitacion();
+      await data.eliminar(id,data)
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacion eliminada",
-        datos: null,
       });
     } catch (error) {
       console.error(error);

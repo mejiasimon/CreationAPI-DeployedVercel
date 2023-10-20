@@ -5,9 +5,7 @@ let controller=new controllerHabitacion()
 let controllerR=new controllerReservas()
 export const Routes=express.Router()
 Routes.get("/obtener/habitaciones",controller.buscar)
-
 Routes.put("/prueba/:id",controller.modificar)
-
 Routes.delete("/eliminar/habitacion/:id",controller.eliminar)
 Routes.post("/mandar/habitacion",controller.registrar)
 Routes.get("/obtener/habitacion/:id",controller.buscarEspecifico)
