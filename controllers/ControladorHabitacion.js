@@ -5,11 +5,12 @@ export class controllerHabitacion {
     let id = request.params.id;
     try {
           let data = new ServicioHabitacion;
-          let datos=await data.modificar(id,data)
+          let datosUpdate=request.body
+          let datos=await data.modificar(id,datosUpdate)
       response.status(200).json({
         estado: true,
         mensaje: "peticion exitosa habitacionactualizada",
-        datos:datos,
+        datos:datosUpdate,
       });
     } catch (error) {
       console.error(error);
@@ -33,7 +34,7 @@ export class controllerHabitacion {
       console.error(error);
       response.status(400).json({
         estado: false,
-        mensaje: "peticion fallada",
+        mensaje: "peticion fallada"+error,
         datos: null,
       });
     }
@@ -51,7 +52,7 @@ export class controllerHabitacion {
       console.error(error);
       response.status(400).json({
         estado: false,
-        mensaje: "peticion fallada",
+        mensaje: "peticion fallada"+error,
         datos: null,
       });
     }
@@ -89,7 +90,7 @@ export class controllerHabitacion {
       console.error(error);
       response.status(400).json({
         estado: false,
-        mensaje: "peticion fallada",
+        mensaje: "peticion fallada"+error,
         datos: null,
       });
     }

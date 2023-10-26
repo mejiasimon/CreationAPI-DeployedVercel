@@ -1,6 +1,7 @@
-import { modeloReservas } from "../models/modeloReservas"
+import { modeloReservas } from "../models/modeloReservas.js"
 export class ServicioReserva {
   constructor() {}
+
   async buscar() {
 let reservaHabitaciones=await modeloReservas.find()
 return reservaHabitaciones
@@ -12,9 +13,8 @@ return reservaHabitacion
 
   }
   async modificar(id,data) {
-return await modeloReservas.findByIdAndUpdate(id,data)
-
-
+    let actualizarHabitacion=await modeloReservas.findByIdAndUpdate(id, data);
+    return actualizarHabitacion.save()
   }
   async registrar(data) {
 let registrarReserva=new modeloReservas(data)
